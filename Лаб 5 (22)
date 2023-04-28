@@ -1,6 +1,7 @@
 5 (22) 
 #include <iostream>
 #include <string>
+# using namespace std;
 
 class Country {
 public:
@@ -17,50 +18,50 @@ public:
 
     
     void printInfo() {
-        std::cout << "Назва країни: " << name << std::endl;
-        std::cout << "Столиця: " << capital << std::endl;
-        std::cout << "Населення: " << population << " людина" << std::endl;
-        std::cout << "Площа: " << area << " кв. км" << std::endl;
-        std::cout << "ВВП: " << gdp << " млрд. долларів" << std::endl;
-        std::cout << "Валюта: " << currency << std::endl;
-        std::cout << "Офіційна мова: " << language << std::endl;
+        cout << "Назва країни: " << name << endl;
+        cout << "Столиця: " << capital << endl;
+        cout << "Населення: " << population << " людина" << endl;
+        cout << "Площа: " << area << " кв. км" << endl;
+        cout << "ВВП: " << gdp << " млрд. долларів" << endl;
+        cout << "Валюта: " << currency << endl;
+        cout << "Офіційна мова: " << language << endl;
     }
 
     
-    void setName(const std::string& value) { name = value; }
-    void setCapital(const std::string& value) { capital = value; }
+    void setName(const string& value) { name = value; }
+    void setCapital(const string& value) { capital = value; }
     void setPopulation(int value) { population = value; }
     void setArea(double value) { area = value; }
     void setGdp(double value) { gdp = value; }
-    void setCurrency(const std::string& value) { currency = value; }
-    void setLanguage(const std::string& value) { language = value; }
+    void setCurrency(const string& value) { currency = value; }
+    void setLanguage(const string& value) { language = value; }
 
 private:
-    std::string name; // Назва країни
-    std::string capital; // Столиця
+   string name; // Назва країни
+    string capital; // Столиця
     int population; // Населення
     double area; // Площа
     double gdp; // ВВП
-    std::string currency; // Валюта
-    std::string language; // Офіційна мова
+    string currency; // Валюта
+    string language; // Офіційна мова
 };
 
 int main() {
     Country country;
-    std::cout << "Введіть назву країни: ";
-    std::getline(std::cin, country.setName);
-    std::cout << "Введіть столицю: ";
-    std::getline(std::cin, country.setCapital);
-    std::cout << "Введіть населення: ";
-    std::cin >> country.setPopulation;
-    std::cout << "Введіть площу: ";
-    std::cin >> country.setArea;
-    std::cout << "Введіть ВВП: ";
-    std::cin >> country.setGdp;
-    std::cout << "Введіть валюту: ";
-    std::getline(std::cin, country.setCurrency);
-    std::cout << "Введіть офіційну мову: ";
-    std::getline(std::cin, country.setLanguage);
+    cout << "Введіть назву країни: ";
+    getline(cin, country.setName);
+    cout << "Введіть столицю: ";
+    getline(cin, country.setCapital);
+    cout << "Введіть населення: ";
+    cin >> country.setPopulation;
+    cout << "Введіть площу: ";
+    cin >> country.setArea;
+    cout << "Введіть ВВП: ";
+    cin >> country.setGdp;
+    cout << "Введіть валюту: ";
+    getline(cin, country.setCurrency);
+    cout << "Введіть офіційну мову: ";
+    getline(cin, country.setLanguage);
 
     country.printInfo();
 

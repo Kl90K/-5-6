@@ -1,0 +1,73 @@
+5 (22) 
+#include <iostream>
+#include <string>
+
+class Country {
+public:
+    
+    Country() {
+        name = "";
+        capital = "";
+        population = 0;
+        area = 0.0;
+        gdp = 0.0;
+        currency = "";
+        language = "";
+    }
+
+    
+    void printInfo() {
+        std::cout << "Назва країни: " << name << std::endl;
+        std::cout << "Столиця: " << capital << std::endl;
+        std::cout << "Населення: " << population << " людина" << std::endl;
+        std::cout << "Площа: " << area << " кв. км" << std::endl;
+        std::cout << "ВВП: " << gdp << " млрд. долларів" << std::endl;
+        std::cout << "Валюта: " << currency << std::endl;
+        std::cout << "Офіційна мова: " << language << std::endl;
+    }
+
+    
+    void setName(const std::string& value) { name = value; }
+    void setCapital(const std::string& value) { capital = value; }
+    void setPopulation(int value) { population = value; }
+    void setArea(double value) { area = value; }
+    void setGdp(double value) { gdp = value; }
+    void setCurrency(const std::string& value) { currency = value; }
+    void setLanguage(const std::string& value) { language = value; }
+
+private:
+    std::string name; // Назва країни
+    std::string capital; // Столиця
+    int population; // Населення
+    double area; // Площа
+    double gdp; // ВВП
+    std::string currency; // Валюта
+    std::string language; // Офіційна мова
+};
+
+int main() {
+    Country country;
+    std::cout << "Введіть назву країни: ";
+    std::getline(std::cin, country.setName);
+    std::cout << "Введіть столицю: ";
+    std::getline(std::cin, country.setCapital);
+    std::cout << "Введіть населення: ";
+    std::cin >> country.setPopulation;
+    std::cout << "Введіть площу: ";
+    std::cin >> country.setArea;
+    std::cout << "Введіть ВВП: ";
+    std::cin >> country.setGdp;
+    std::cout << "Введіть валюту: ";
+    std::getline(std::cin, country.setCurrency);
+    std::cout << "Введіть офіційну мову: ";
+    std::getline(std::cin, country.setLanguage);
+
+    country.printInfo();
+
+    return 0;
+}
+
+
+
+
+
